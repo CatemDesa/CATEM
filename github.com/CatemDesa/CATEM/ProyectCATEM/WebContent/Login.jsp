@@ -4,12 +4,12 @@
 <html>
 <head>
 	<title>CATEM - Ingresar</title>
-	<link rel="stylesheet" href="css/login.css">
+	<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 <div class="box">
 <h2><a href="#" id="toggle-login-forms" style="cursor:pointer;" class="visible">Formulario de Login</a></h2>
-<div style="margin:0p; position:static; overflow:hidden; height:340px;">
+<div style="margin:0px; position:static; overflow:hidden;">
 <div class="block" id="login-form" style="margin:0px;">
 
 <fieldset class="login">
@@ -32,5 +32,8 @@
 	</div>
 	</div>
 	</div>
+	<script type="text/javascript" src="js/mootools-1.2.1-core.js"></script>
+	<script type="text/javascript" src="js/mootools-1.2-more.js"></script>
+	<script type="text/javascript" src="js/mootools-fluid16-autoselect.js"></script>
 </body>
 </html>
