@@ -11,33 +11,33 @@
 	<div class="box menu">
 		<h2>
 		<a href="#" id="toggle-section-menu" style="cursor:pointer;" class="visible">Menú de opciones</a></h2>
-		<div style="margin:0px;position:static; overflow:hidden; height:226px">
+		<div style="margin:0px;position:static; overflow:hidden;">
 			<div class="block" id="section-menu" style="margin:0px;">
 			<ul class="section menu">
 				<li>
-					<a class="menuitem ">Socios</a>
-					<ul class="submenu " style="padding-top:0px; border-top-style:none; padding-bottom:0px; border-bottom-style:none; overflow: hidden; height:125px;">
+					<a class="menuitem current">Socios</a>
+					<ul class="submenu current" >
 						<li><a>Alta</a></li>
 						<li><a>Baja</a></li>
 						<li><a>Modificar</a></li>
 					</ul>
 				</li>
 				<li>
-					<a class="menuitem current">Pagos</a>
-					<ul class="menuitem current" style="padding-top:0px; border-top-style:none; padding-bottom:0xp; border-bottom-style:none; overflow: hidden; height:125px;">
+					<a class="menuitem ">Pagos</a>
+					<ul class="submenu ">
 						<li><a>Ingresos Socios</a></li>
 						<li><a>Ingresos Extraordinarios</a></li>
 						<li><a>Pagos</a></li>
 					</ul>
 				</li>
 				<li>
-					<a class="menuitem current">Cardio</a>
-					<ul class="menuitem current" style="padding-top:0px; border-top-style:none; padding-bottom:0xp; border-bottom-style:none; overflow: hidden; height:125px;">
+					<a class="menuitem ">Cardio</a>
+					<ul class="submenu ">
 					</ul>
 				</li>
 				<li>
-					<a class="menuitem current">Reportes</a>
-					<ul class="menuitem current" style="padding-top:0px; border-top-style:none; padding-bottom:0xp; border-bottom-style:none; overflow: hidden; height:125px;">
+					<a class="menuitem ">Reportes</a>
+					<ul class="submenu ">
 					</ul>
 				</li>
 			</ul>
