@@ -6,9 +6,12 @@
 	<title>CATEM - Ingresar</title>
 	<link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body style="margin:0px 25% 0px 25%;">
+
 <div class="box">
 <h2><a href="#" id="toggle-login-forms" style="cursor:pointer;" class="visible">Formulario de Login</a></h2>
+
+
 <div style="margin:0px; position:static; overflow:hidden;">
 <div class="block" id="login-form" style="margin:0px;">
 
