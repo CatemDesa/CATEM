@@ -5,6 +5,8 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import oracle.jdbc.OracleTypes;
+import bsch.ar.persistence.jdbc.JdbcUtils;
 import ar.com.catem.dao.LoginDAO;
 import ar.com.catem.dao.jdbc.JDBCConnection;
 import ar.com.catem.model.Usuario;
