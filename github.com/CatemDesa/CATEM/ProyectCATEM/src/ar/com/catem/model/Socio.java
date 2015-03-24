@@ -15,7 +15,7 @@ public class Socio {
 	private Integer idEstadoCivil;
 	private Date fechaNacimiento;
 	private String dni;
-	private Integer idOcupacion;
+	private String ocupacion;
 	private String email;
 	private Date fechaAlta;
 	private Date fechaBaja;
@@ -101,12 +101,12 @@ public class Socio {
 		this.dni = dni;
 	}
 
-	public Integer getIdOcupacion() {
-		return idOcupacion;
+	public String getOcupacion() {
+		return ocupacion;
 	}
 
-	public void setIdOcupacion(Integer idOcupacion) {
-		this.idOcupacion = idOcupacion;
+	public void setOcupacion(String ocupacion) {
+		this.ocupacion = ocupacion;
 	}
 
 	public String getEmail() {

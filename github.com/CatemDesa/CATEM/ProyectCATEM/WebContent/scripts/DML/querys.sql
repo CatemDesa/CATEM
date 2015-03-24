@@ -72,7 +72,7 @@ CREATE TABLE Cardio_NoSocio
 --------------------------------------------------------------------------------
 CREATE TABLE Cardio_Socio
 (
-	IdSocio INT NOT NULL PRIMARY KEY
+	 IdSocioCardio INT NOT NULL PRIMARY KEY
 	,IdSocio INT NOT NULL 
 	,Fecha_Alta DATE  NULL 
 	,Fecha_Baja DATE  NULL 
