@@ -1,16 +1,16 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-	<title>Menú de Opciones</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>MenÃº de Opciones</title>
 	<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 	<div class="box menu">
 		<h2>
-		<a href="#" id="toggle-section-menu" style="cursor:pointer;" class="visible">Menú de opciones</a></h2>
+		<a href="#" id="toggle-section-menu" style="cursor:pointer;" class="visible">MenÃº de opciones</a></h2>
 		<div style="margin:0px;position:static; overflow:hidden;">
 			<div class="block" id="section-menu" style="margin:0px;">
 			<ul class="section menu">

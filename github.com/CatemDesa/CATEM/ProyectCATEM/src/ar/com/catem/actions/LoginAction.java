@@ -14,7 +14,16 @@ public class LoginAction extends ActionSupport {
 	@Override
 	public String execute() throws Exception {
 
-		return super.execute();
+		//return super.execute();
+		if(username.length()<1)
+		{addFieldError("username", "Verifique el nombre de usuario");
+		return ERROR;
+		}
+		if(password.length()<1)
+		{addFieldError("password", "Verifique la contraseña");
+		return ERROR;
+		}
+		else {return SUCCESS;}
 	}
 
 	public String getUsername() {
