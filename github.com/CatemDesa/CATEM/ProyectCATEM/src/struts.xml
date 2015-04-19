@@ -2,20 +2,20 @@
  
 <struts>
     <constant name="struts.devMode" value="true" />    
-   <!-- <constant name="struts.convention.result.path" value="/"></constant> --> 
+   <constant name="struts.convention.result.path" value="/"></constant> 
     
  
-    <package name="defalut" namespace="/" extends="struts-default">
-      <!--    <result-types>
+    <package name="defalut" extends="struts-default">
+         <result-types>
 			<result-type name="tiles"
 				class="org.apache.struts2.views.tiles.TilesResult" />
 		</result-types>
--->        <action name="login" class="ar.com.catem.actions.LoginAction">
-            <!-- 
+        <action name="login" class="ar.com.catem.actions.LoginAction">
+            
             <result name="success" type="tiles">/welcome.tiles</result>
             <result name="error">Login.jsp</result>
             <result name="input">Login.jsp</result> 
-            -->
+           
             <result name="success">Welcome.jsp</result>
             
         </action>       

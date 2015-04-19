@@ -18,10 +18,10 @@
 <fieldset class="login">
 <legend>Ingreso</legend>
 <s:fielderror/>
-<s:form action="loginAction">    
+<s:form action="login">    
 	
 	 <p class="notice">Introduzca sus datos
-		<s:textfield key="nombreUsuario" label="Nombre de Usuario" />
+		<s:textfield key="username" label="Nombre de Usuario" />
 	    <s:password key="password" label="Contraseña" />
  		<s:submit value="Enviar" />       
 		</s:form>

@@ -6,15 +6,15 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import oracle.jdbc.OracleTypes;
-import bsch.ar.persistence.jdbc.JdbcUtils;
 import ar.com.catem.dao.LoginDAO;
 import ar.com.catem.dao.jdbc.JDBCConnection;
 import ar.com.catem.model.Usuario;
+import bsch.ar.persistence.jdbc.JdbcUtils;
 
 public class LoginDAOImpl implements LoginDAO{
 
 	@Override
-	public void autenticateUser(Usuario usuario) throws Exception{
+	public Usuario autenticateUser(Usuario usuario) throws Exception{
 		Connection conn = JDBCConnection.getConnection();
         try {
         	CallableStatement callableStatement = conn.prepareCall(PACKAGE + FN_GET_AUTENTICATE);
@@ -32,6 +32,7 @@ public class LoginDAOImpl implements LoginDAO{
 	          user.setTipousuario(JdbcUtils.getIntObject(rs, TIPO_USUARIO));
 	        }
 	        rs.close();
+	        return user;
         } catch (SQLException e) {
 			throw new Exception(e.getMessage());
 		}
