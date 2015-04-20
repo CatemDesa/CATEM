@@ -18,9 +18,10 @@ public class LoginDAOImpl implements LoginDAO{
 		Connection conn = JDBCConnection.getConnection();
         try {
         	CallableStatement callableStatement = conn.prepareCall(PACKAGE + FN_GET_AUTENTICATE);
-            callableStatement.setString(2,usuario.getNombreUsuario());
+        	callableStatement.registerOutParameter(1, OracleTypes.CURSOR);
+        	callableStatement.setString(2,usuario.getNombreUsuario());
             callableStatement.setString(3,usuario.getPassword());
-			callableStatement.registerOutParameter(1, OracleTypes.CURSOR);		
+					
 			callableStatement.executeUpdate();
 			ResultSet rs = (ResultSet) callableStatement.getObject(1);
 	        Usuario user = null;
@@ -34,7 +35,9 @@ public class LoginDAOImpl implements LoginDAO{
 	        rs.close();
 	        return user;
         } catch (SQLException e) {
+        	e.printStackTrace();
 			throw new Exception(e.getMessage());
+			
 		}
 	}
 	

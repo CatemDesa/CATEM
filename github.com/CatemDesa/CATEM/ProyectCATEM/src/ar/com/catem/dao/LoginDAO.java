@@ -13,7 +13,7 @@ public interface LoginDAO {
 	static final String NOMBRE = "NOMBRE";
 	static final String PASSWORD = "CONTRASENIA";
 	static final String TIPO_USUARIO = "TIPOUSUARIO";
-	static final String TEL_PARTICULAR = "";
-	static final String TEL_PERSONAL = "";
+	/*static final String TEL_PARTICULAR = "";
+	static final String TEL_PERSONAL = "";*/
 	
 }
