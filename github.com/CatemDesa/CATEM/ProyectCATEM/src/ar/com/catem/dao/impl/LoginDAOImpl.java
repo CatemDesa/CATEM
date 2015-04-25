@@ -17,7 +17,7 @@ public class LoginDAOImpl implements LoginDAO{
 	public Usuario autenticateUser(Usuario usuario) throws Exception{
 		Connection conn = JDBCConnection.getConnection();
         try {
-        	CallableStatement callableStatement = conn.prepareCall(PACKAGE + FN_GET_AUTENTICATE);
+        	CallableStatement callableStatement = conn.prepareCall("{? = call " +PACKAGE + FN_GET_AUTENTICATE + "}");
         	callableStatement.registerOutParameter(1, OracleTypes.CURSOR);
         	callableStatement.setString(2,usuario.getNombreUsuario());
             callableStatement.setString(3,usuario.getPassword());

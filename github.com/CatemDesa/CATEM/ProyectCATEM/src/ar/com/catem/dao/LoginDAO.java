@@ -7,7 +7,7 @@ public interface LoginDAO {
 	public Usuario autenticateUser(Usuario usuario) throws Exception;
 	
 	static final String PACKAGE = "CATEM_LOGIN_PACKAGE";
-	static final String FN_GET_AUTENTICATE = ".FN_AUTENTICATE_USER(?,?,?)";
+	static final String FN_GET_AUTENTICATE = ".FN_AUTENTICATE_USER(?,?)";
 	 
 	static final String ID_USUARIO = "IDUSUARIO";
 	static final String NOMBRE = "NOMBRE";
