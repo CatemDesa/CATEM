@@ -9,7 +9,7 @@
 <body>
 	<div class="container_16">
 		<div class="grid_16">
-			<h1 id="branding">Cámara de Comercio de Temperley</h1>
+			<h1 id="branding" style="text-align: center;">Cámara de Comercio de Temperley</h1>
 			<s:form>
 			<div class="grid_16">
 			<ul class="nav main">

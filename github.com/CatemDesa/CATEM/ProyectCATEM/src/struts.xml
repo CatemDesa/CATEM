@@ -15,8 +15,6 @@
             <result name="success" type="tiles">/welcome.tiles</result>
             <result name="error">Login.jsp</result>
             <result name="input">Login.jsp</result> 
-           
-            <result name="success">Welcome.jsp</result>
             
         </action>       
         
