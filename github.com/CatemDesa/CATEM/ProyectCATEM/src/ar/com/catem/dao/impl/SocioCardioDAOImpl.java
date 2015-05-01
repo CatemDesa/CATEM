@@ -8,19 +8,7 @@ import ar.com.catem.model.CardioSocio;
 public class SocioCardioDAOImpl implements SocioCardioDAO {
 
 	@Override
-	public void insertSocioCardio(CardioNoSocio cardioNS) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
 	public void insertSocioCardio(CardioSocio cardioS) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void deleteSocioCardio(CardioNoSocio cardioNS) {
 		// TODO Auto-generated method stub
 		
 	}
@@ -38,12 +26,6 @@ public class SocioCardioDAOImpl implements SocioCardioDAO {
 	}
 
 	@Override
-	public CardioNoSocio getSocioCardioNoSocioPorPeriodo(String periodo) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
 	public CardioSocio getSocioCardioPorPeriodo(String periodo) {
 		// TODO Auto-generated method stub
 		return null;
@@ -54,5 +36,31 @@ public class SocioCardioDAOImpl implements SocioCardioDAO {
 		// TODO Auto-generated method stub
 		
 	}
+
+	@Override
+	public void bajaAdicionalCardio(AdicionalCardio adicionalCardio) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public CardioNoSocio getSocioCardioNoSocioPorPeriodo(String periodo) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void deleteSocioCardio(CardioNoSocio cardioNS) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void insertSocioCardio(CardioNoSocio cardioNS) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	
 
 }

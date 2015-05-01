@@ -16,7 +16,7 @@ public class SocioDAOImpl implements SocioDAO {
 	public Integer insertSocio(Socio socio) throws Exception {
 		Connection conn = JDBCConnection.getConnection();
         try {
-        	CallableStatement callableStatement = conn.prepareCall(PACKAGE + FN_INSERT_SOCIO);
+        	CallableStatement callableStatement = conn.prepareCall("{? = call " + PACKAGE + FN_INSERT_SOCIO + "}");
             callableStatement.setString(2,socio.getApellido());
             callableStatement.setString(3,socio.getNombre());
             callableStatement.setString(4,socio.getNroSocio());
