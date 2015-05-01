@@ -19,9 +19,11 @@ public interface DomicilioDAO {
 	static final String ID_TIPO_DOM="IDTIPODOMICILIO";
 	
 	
-	public void insertDomicilio(Domicilio domicilio);
+	public void insertDomicilio(Domicilio domicilio) throws Exception;
 	
-	public Domicilio getDomicilioBy(Integer idDomicilio);
+	public void updateDomicilio(Domicilio domicilio) throws Exception;
+	
+	public Domicilio getDomicilioBy(Integer idDomicilio) throws Exception;
 	
 	public List<Domicilio> getDomiciliosBy(Integer idSocio);
 	
