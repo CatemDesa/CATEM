@@ -7,16 +7,11 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta name="viewport" content="width=divice-width, initial-scale=1.0">
 
-<link
-	href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css"
-	rel="stylesheet">
+
+	<link rel="stylesheet" href="css/style.css">
 <script src="http://code.jquery.com/jquery.js"></script>
-<script src="js/bootstrap.min.js"></script>
+<!--<script src="js/bootstrap.min.js"></script>-->
 
-<link href="css/menu.css" rel="stylesheet">
-
-<link href="<s:url value="/css/estilo.css"/>" rel="stylesheet"
-	type="text/css" />
 
 <title><tiles:insertAttribute name="title" ignore="true" /></title>
 </head>
@@ -46,5 +41,9 @@
 		</tr>
 	</table>
 
+
+			<script type="text/javascript" src="js/mootools-1.2.1-core.js"></script>
+			<script type="text/javascript" src="js/mootools-1.2-more.js"></script>
+			<script type="text/javascript" src="js/mootools-fluid16-autoselect.js"></script>
 </body>
 </html>

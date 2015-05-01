@@ -1,13 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title>Menú de Opciones</title>
-	<link rel="stylesheet" href="css/style.css">
-</head>
-<body>
+
+
 	<div class="box menu">
 		<h2>
 		<a href="#" id="toggle-section-menu" style="cursor:pointer;" class="visible">Menú de opciones</a></h2>
@@ -45,8 +39,3 @@
 		</div>
 	</div>
 
-	<script type="text/javascript" src="js/mootools-1.2.1-core.js"></script>
-	<script type="text/javascript" src="js/mootools-1.2-more.js"></script>
-	<script type="text/javascript" src="js/mootools-fluid16-autoselect.js"></script>
-</body>
-</html>
