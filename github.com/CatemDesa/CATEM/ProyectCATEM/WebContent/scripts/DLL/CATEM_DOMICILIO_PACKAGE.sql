@@ -9,8 +9,6 @@ create or replace package CATEM_DOMICILIO_PACKAGE as
 end CATEM_DOMICILIO_PACKAGE;
 
 
---------BODY--------------
-
 
 create or replace package body CATEM_DOMICILIO_PACKAGE as
 
@@ -24,6 +22,11 @@ create or replace package body CATEM_DOMICILIO_PACKAGE as
     VALUES (id_dom, calle, numero, localidad, telefono, idTipoDom);
     
     RETURN id_dom;	
+    
+     EXCEPTION     
+      WHEN OTHERS THEN 
+      return -1;
+    
   END FN_CREATE_DOM;
 
   FUNCTION FN_GET_DOM(idDom NUMBER) RETURN SYS_REFCURSOR
@@ -54,7 +57,12 @@ create or replace package body CATEM_DOMICILIO_PACKAGE as
     IDTIPODOMICILIO=idTipoDom
     WHERE IDDOMICILIO=id_dom;
       
-    RETURN id_dom;	
+    RETURN 0;	
+    
+     EXCEPTION     
+      WHEN OTHERS THEN 
+      return -1;
+    
   END FN_UPDATE_DOM;
 
 end CATEM_DOMICILIO_PACKAGE;

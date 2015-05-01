@@ -4,12 +4,12 @@ create or replace package CATEM_LOGIN_PACKAGE as
 
 end CATEM_LOGIN_PACKAGE;
 
------- BODY ------
+
 
 create or replace package body CATEM_LOGIN_PACKAGE as
 
 FUNCTION FN_AUTENTICATE_USER(nameUser VARCHAR2, pass VARCHAR2) RETURN SYS_REFCURSOR
-IS 
+AS 
 tp_cursor SYS_REFCURSOR;
 BEGIN
   OPEN tp_cursor FOR
