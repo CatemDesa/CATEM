@@ -17,5 +17,7 @@
 	<definition name="/welcome.tiles" extends="baseLayout">
 		<put-attribute name="body" value="/Welcome.jsp" />
 	</definition>
-
+	<definition name="/altaSocio.tiles" extends="baseLayout">
+		<put-attribute name="body" value="/AltaSocio.jsp" />
+	</definition>
 </tiles-definitions>
