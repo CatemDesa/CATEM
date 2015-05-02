@@ -1,24 +1,52 @@
 package ar.com.catem.model;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
 
-public class Socio {
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
+@Entity
+@Table(name="SOCIO")
+public class Socio implements Serializable{
+
+	private static final long serialVersionUID = 6606960051574142485L;
+	
+	@Column(name="IDSOCIO")
+	@GeneratedValue
+	@Id
 	private Integer idSocio;
+	@Column(name="IDTIPOSOCIO")
 	private Integer idTipoSocio;
+	@Column(name="NUMERO_SOCIO")
 	private String nroSocio;
+	@Column(name="NOMBRE")
 	private String apellido;
+	@Column(name="APELLIDO")
 	private String nombre;
+	@Column(name="CELL")
 	private String cel;
+	@Column(name="NACIONALIDAD")
 	private String nacionalidad;
+	@Column(name="IDESTADOCIVIL")
 	private Integer idEstadoCivil;
+	@Column(name="FECHA_NAC")
 	private Date fechaNacimiento;
+	@Column(name="DNI")
 	private String dni;
+	@Column(name="OCUPACION")
 	private String ocupacion;
+	@Column(name="MAIL")
 	private String email;
+	@Column(name="FECHA_ALTA")
 	private Date fechaAlta;
+	@Column(name="FECHA_BAJA")
 	private Date fechaBaja;
+	@Column(name="AFAVOR")
 	private BigDecimal aFavor;
 
 	public Integer getIdSocio() {

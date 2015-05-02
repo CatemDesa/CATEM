@@ -1,13 +1,35 @@
 package ar.com.catem.model;
 
-public class Domicilio {
+import java.io.Serializable;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.Transient;
+
+@Entity
+@Table(name="DOMICILIO")
+public class Domicilio implements Serializable{
+
+	private static final long serialVersionUID = 2458952892647120267L;
+	
+	@Id
+	@GeneratedValue
+	@Column(name="IDDOMICILIO")
 	private Integer idDomicilio;
+	@Column(name="CALLE")
 	private String calle;
+	@Column(name="NUMERO")
 	private String numero;
+	@Transient
 	private String provincia;
+	@Column(name="LOCALIDAD")
 	private String localidad;
+	@Column(name="TELEFONO")
 	private String telefono;
+	@Column(name="IDTIPODOMICILIO")
 	private Integer idTipoDomicilio;
 
 	public Integer getIdDomicilio() {

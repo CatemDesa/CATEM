@@ -1,12 +1,29 @@
 package ar.com.catem.model;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class CardioSocio {
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
+@Entity
+@Table(name="CARDIO_SOCIO")
+public class CardioSocio implements Serializable{
+
+	private static final long serialVersionUID = -5476483065736531715L;
+	
+	@Id
+	@GeneratedValue
+	@Column(name="IDSOCIOCARDIO")
 	private Integer idCardioSocio;
+	@Column(name="IDSOCIO")
 	private Integer idSocio;
+	@Column(name="FECHA_ALTA")
 	private Date fechaAlta;
+	@Column(name="FECHA_BAJA")
 	private Date fechaBaja;
 
 	public Integer getIdCardioSocio() {

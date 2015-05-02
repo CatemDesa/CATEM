@@ -1,100 +1,75 @@
 package ar.com.catem.dao.impl;
 
-import java.sql.CallableStatement;
-import java.sql.Connection;
-import java.sql.Date;
-import java.sql.SQLException;
 import java.util.List;
 
-import oracle.jdbc.OracleTypes;
+import org.hibernate.Criteria;
+import org.hibernate.Session;
+import org.hibernate.criterion.Restrictions;
+
 import ar.com.catem.dao.EntradaSalidaDAO;
-import ar.com.catem.dao.jdbc.JDBCConnection;
 import ar.com.catem.model.Cheque;
 import ar.com.catem.model.DescripcionCuenta;
 import ar.com.catem.model.PagoIngresos;
 import ar.com.catem.model.Rubro;
 import ar.com.catem.model.Salida;
+import ar.com.catem.util.HibernateUtil;
 
 public class EntradaSalidaDAOImpl implements EntradaSalidaDAO {
 
 	@Override
 	public void insertEntrada(PagoIngresos pagoIngresos) throws Exception {
 		
-		Connection conn = JDBCConnection.getConnection();
-        try {
-        	CallableStatement callableStatement = conn.prepareCall("{? = call " + PACKAGE_ENTRADA + FN_CREATE_PAGO_ING + "}");
-            callableStatement.setInt(2,pagoIngresos.getIdSocio());
-            callableStatement.setBigDecimal(3, null); //TODO PORQUE ESPERA ID_DESCRIPCION??
-            callableStatement.setBigDecimal(4, pagoIngresos.getImporte());
-            callableStatement.setDate(5,new Date(pagoIngresos.getFecha().getTime()));
-            callableStatement.setInt(6,pagoIngresos.getIdDescCuenta());
-			callableStatement.registerOutParameter(1, OracleTypes.NUMBER);		
-			callableStatement.executeUpdate();
-			Integer result = (Integer) callableStatement.getObject(1);
-			if(result != -1){
-				// todo ok
-			}else{
-				// error
-			}
-        } catch (SQLException e) {
-			throw new Exception(e.getMessage());
-		}
+		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+        session.beginTransaction();
+        session.save(pagoIngresos);
+        session.getTransaction().commit();
+        session.close();
 	}
 
 	@Override
 	public void insertSalida(Salida salida) throws Exception {
 		
-		Connection conn = JDBCConnection.getConnection();
-        try {
-        	CallableStatement callableStatement = conn.prepareCall("{? = call " + PACKAGE_SALIDA + FN_CREATE_SALIDA + "}");
-            callableStatement.setInt(2, 0); //TODO PORQUE ESPERA ID_DESCRIPCION??
-            callableStatement.setDate(3, new Date(salida.getFecha().getTime()));
-            callableStatement.setInt(1, salida.getIdDescCuenta());
-            
-			callableStatement.registerOutParameter(1, OracleTypes.NUMBER);		
-			callableStatement.executeUpdate();
-			Integer result = (Integer) callableStatement.getObject(1);
-			if(result != -1){
-				// todo ok
-			}else{
-				// error
-			}
-        } catch (SQLException e) {
-			throw new Exception(e.getMessage());
-		}
+		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+        session.beginTransaction();
+        session.save(salida);
+        session.getTransaction().commit();
+        session.close();
 	}
 
 	@Override
 	public void insertCheque(Cheque cheque) throws Exception {
-		Connection conn = JDBCConnection.getConnection();
-        try {
-        	CallableStatement callableStatement = conn.prepareCall("{? = call " + PACKAGE_ENTRADA + FN_INSERT_CHQ + "}");
-            callableStatement.setString(2, cheque.getNumero());
-            callableStatement.setString(3, cheque.getBanco());
-            callableStatement.setDate(4,new Date(cheque.getFecha().getTime()));
-			callableStatement.registerOutParameter(1, OracleTypes.NUMBER);		
-			callableStatement.executeUpdate();
-			Integer result = (Integer) callableStatement.getObject(1);
-			if(result != -1){
-				// todo ok
-			}else{
-				// error
-			}
-        } catch (SQLException e) {
-			throw new Exception(e.getMessage());
-		}	
+		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+        session.beginTransaction();
+        session.save(cheque);
+        session.getTransaction().commit();
+        session.close();
 	}
 
 	@Override
 	public List<Rubro> getRubros() {
 		
-		return null;
+		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+		session.beginTransaction();
+		Criteria criteria = session.createCriteria(Rubro.class);        
+        @SuppressWarnings("unchecked")
+		List<Rubro> rubros = criteria.list();
+        session.close();
+		
+		return rubros;
 	}
 
 	@Override
 	public List<DescripcionCuenta> getCuentasContablesBy(Integer idRubro) {
 		
-		return null;
+		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+		session.beginTransaction();
+		Criteria criteria = session.createCriteria(DescripcionCuenta.class);
+        criteria.add(Restrictions.eq(ID_UBRO, idRubro));
+        @SuppressWarnings("unchecked")
+		List<DescripcionCuenta> descCtas = criteria.list();
+        session.close();
+		
+		return descCtas;
 	}
 
 }

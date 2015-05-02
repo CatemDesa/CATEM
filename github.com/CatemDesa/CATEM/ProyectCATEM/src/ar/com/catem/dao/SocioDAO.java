@@ -25,7 +25,7 @@ public interface SocioDAO {
 	
 	public Integer insertSocio(Socio socio) throws Exception;
 	
-	public void deleteSocio(Socio socio);
+	public void deleteUpdateSocio(Socio socio);
 	
 	public Socio getSocioBy(Integer nroSocio, String apellido, String dni);
 	

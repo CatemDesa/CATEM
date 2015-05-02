@@ -1,52 +1,53 @@
 package ar.com.catem.dao.impl;
 
-import java.sql.CallableStatement;
-import java.sql.Connection;
-import java.sql.Date;
-import java.sql.SQLException;
+import java.util.List;
 
-import oracle.jdbc.OracleTypes;
+import org.hibernate.Criteria;
+import org.hibernate.Session;
+import org.hibernate.criterion.Restrictions;
+
 import ar.com.catem.dao.SocioDAO;
-import ar.com.catem.dao.jdbc.JDBCConnection;
 import ar.com.catem.model.Socio;
+import ar.com.catem.util.HibernateUtil;
 
-public class SocioDAOImpl implements SocioDAO {
+public class SocioDAOImpl extends HibernateUtil implements SocioDAO {
 
 	@Override
 	public Integer insertSocio(Socio socio) throws Exception {
-		Connection conn = JDBCConnection.getConnection();
-        try {
-        	CallableStatement callableStatement = conn.prepareCall("{? = call " + PACKAGE + FN_INSERT_SOCIO + "}");
-            callableStatement.setString(2,socio.getApellido());
-            callableStatement.setString(3,socio.getNombre());
-            callableStatement.setString(4,socio.getNroSocio());
-            callableStatement.setInt(5,socio.getIdTipoSocio());
-            callableStatement.setString(6,socio.getNacionalidad());
-            callableStatement.setInt(7,socio.getIdEstadoCivil());
-            callableStatement.setDate(8,new Date(socio.getFechaNacimiento().getTime()));
-            callableStatement.setString(9,socio.getDni());
-            callableStatement.setString(10,socio.getOcupacion());
-            callableStatement.setString(11,socio.getEmail());
-            callableStatement.setBigDecimal(12,socio.getaFavor());
-			callableStatement.registerOutParameter(1, OracleTypes.NUMBER);		
-			callableStatement.executeUpdate();
-			return (Integer) callableStatement.getObject(1);
-        } catch (SQLException e) {
-			throw new Exception(e.getMessage());
-		}
+				
+		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+        session.beginTransaction();
+        session.save(socio);
+        Integer id = socio.getIdSocio();
+        session.getTransaction().commit();
+        session.close();
 		
+		return id;
 	}
 
 	@Override
-	public void deleteSocio(Socio socio) {
-		// TODO Auto-generated method stub
-		
+	public void deleteUpdateSocio(Socio socio) { // el borrado es físico, se actualiza el campo FECHA_BAJA
+		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+        session.beginTransaction();
+        session.update(socio);
+        session.getTransaction().commit();
+        session.close();		
 	}
 
 	@Override
 	public Socio getSocioBy(Integer nroSocio, String apellido, String dni) {
-		// TODO Auto-generated method stub
-		return null;
+		
+		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+		session.beginTransaction();
+		Criteria criteria = session.createCriteria(Socio.class)
+        .add(Restrictions.eq(NUMERO_SOCIO,nroSocio))
+        .add(Restrictions.eq(APELLIDO,apellido))
+        .add(Restrictions.eq(DNI,dni));
+        @SuppressWarnings("unchecked")
+		List<Socio> socios = criteria.list();
+        session.close();
+		
+		return socios.get(0);
 	}
 
 }

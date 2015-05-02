@@ -7,59 +7,35 @@ import java.sql.SQLException;
 import java.util.List;
 
 import oracle.jdbc.OracleTypes;
+
+import org.hibernate.Criteria;
+import org.hibernate.Session;
+import org.hibernate.criterion.Restrictions;
+
 import ar.com.catem.dao.DomicilioDAO;
 import ar.com.catem.dao.jdbc.JDBCConnection;
 import ar.com.catem.model.Domicilio;
+import ar.com.catem.util.HibernateUtil;
 import bsch.ar.persistence.jdbc.JdbcUtils;
 
 public class DomicilioDAOImpl implements DomicilioDAO {
 
 	@Override
 	public void insertDomicilio(Domicilio domicilio) throws Exception {
-		Connection conn = JDBCConnection.getConnection();
-        try {
-        	CallableStatement callableStatement = conn.prepareCall("{? = call " + PACKAGE + FN_CREATE_DOM + "}");
-            callableStatement.setString(2,domicilio.getCalle());
-            callableStatement.setString(3,domicilio.getNumero());
-            callableStatement.setString(4,domicilio.getLocalidad());
-            callableStatement.setString(5,domicilio.getTelefono());
-            callableStatement.setInt(6,domicilio.getIdTipoDomicilio());
-			callableStatement.registerOutParameter(1, OracleTypes.NUMBER);		
-			callableStatement.executeUpdate();
-			Integer result = (Integer) callableStatement.getObject(1);
-			if(result == 0){
-				// todo ok
-			}else{
-				// error
-			}
-        } catch (SQLException e) {
-			throw new Exception(e.getMessage());
-		}
-		
+		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+        session.beginTransaction();
+        session.save(domicilio);
+        session.getTransaction().commit();
+        session.close();
 	}
 
 	@Override
 	public void updateDomicilio(Domicilio domicilio) throws Exception {
-		Connection conn = JDBCConnection.getConnection();
-        try {
-        	CallableStatement callableStatement = conn.prepareCall("{? = call " + PACKAGE + FN_UPDATE_DOM + "}");
-        	callableStatement.setInt(2,domicilio.getIdDomicilio());
-        	callableStatement.setString(3,domicilio.getCalle());
-            callableStatement.setString(4,domicilio.getNumero());
-            callableStatement.setString(5,domicilio.getLocalidad());
-            callableStatement.setString(6,domicilio.getTelefono());
-            callableStatement.setInt(7,domicilio.getIdTipoDomicilio());
-			callableStatement.registerOutParameter(1, OracleTypes.NUMBER);		
-			callableStatement.executeUpdate();
-			Integer result = (Integer) callableStatement.getObject(1);
-			if(result == 0){
-				// todo ok
-			}else{
-				// error
-			}
-        } catch (SQLException e) {
-			throw new Exception(e.getMessage());
-		}
+		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+        session.beginTransaction();
+        session.update(domicilio);
+        session.getTransaction().commit();
+        session.close();
 		
 	}
 	
@@ -92,8 +68,15 @@ public class DomicilioDAOImpl implements DomicilioDAO {
 
 	@Override
 	public List<Domicilio> getDomiciliosBy(Integer idSocio) {		
-		// TODO CREAR FUNCTION
-		return null;	
+		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+		session.beginTransaction();
+		Criteria criteria = session.createCriteria(Domicilio.class);
+        criteria.add(Restrictions.eq(ID, idSocio)); // TODO VER COMO HACER ESTA CONSULTA
+        @SuppressWarnings("unchecked")
+		List<Domicilio> domicilios = criteria.list();
+        session.close();
+		
+		return domicilios;	
 	}
 
 }

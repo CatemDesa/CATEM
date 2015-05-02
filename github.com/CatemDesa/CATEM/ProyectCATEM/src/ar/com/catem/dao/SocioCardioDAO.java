@@ -1,5 +1,7 @@
 package ar.com.catem.dao;
 
+import java.util.List;
+
 import ar.com.catem.model.AdicionalCardio;
 import ar.com.catem.model.CardioNoSocio;
 import ar.com.catem.model.CardioSocio;
@@ -32,23 +34,23 @@ public interface SocioCardioDAO {
 	
 	public void insertSocioCardio(CardioSocio cardioS);
 	
-	public void deleteSocioCardio(CardioSocio cardioS);	
+	public void deleteUpdateSocioCardio(CardioSocio cardioS);	
 	
-	public void getSociosCardio();
+	public List<CardioSocio> getSociosCardio();
 	
-	public CardioSocio getSocioCardioPorPeriodo(String periodo);
+	public List<CardioSocio> getSociosCardioPorPeriodo(String periodo);
 	
 	// ADICIONALES
 	
 	public void insertAdicionalCardio(AdicionalCardio adicionalCardio);
 	
-	public void bajaAdicionalCardio(AdicionalCardio adicionalCardio);
+	public void deleteUpdateAdicionalCardio(AdicionalCardio adicionalCardio);
 	
 	// NO SOCIOS
 	
-	public CardioNoSocio getSocioCardioNoSocioPorPeriodo(String periodo);
+	public List<CardioNoSocio> getSociosCardioNoSocioPorPeriodo(String periodo);
 	
-	public void deleteSocioCardio(CardioNoSocio cardioNS);
+	public void deleteUpdateSocioCardio(CardioNoSocio cardioNS);
 	
 	public void insertSocioCardio(CardioNoSocio cardioNS);
 	

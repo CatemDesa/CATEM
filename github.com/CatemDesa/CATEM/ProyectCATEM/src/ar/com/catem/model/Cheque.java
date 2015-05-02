@@ -1,12 +1,29 @@
 package ar.com.catem.model;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Cheque {
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
+@Entity
+@Table(name="CHEQUE")
+public class Cheque implements Serializable{
+
+	private static final long serialVersionUID = 6288020294846399891L;
+	
+	@Id
+	@GeneratedValue
+	@Column(name="IDCHEQUE")
 	private Integer idCheque;
+	@Column(name="NUMERO")
 	private String numero;
+	@Column(name="BANCO")
 	private String banco;
+	@Column(name="FECHA")
 	private Date fecha;
 
 	public Integer getIdCheque() {

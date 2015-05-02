@@ -4,6 +4,7 @@ import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
 
 import oracle.jdbc.OracleTypes;
 import ar.com.catem.dao.LoginDAO;
@@ -39,6 +40,19 @@ public class LoginDAOImpl implements LoginDAO{
 			throw new Exception(e.getMessage());
 			
 		}
+		
+		/*Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+		session.beginTransaction();
+        Criteria criteria = session.createCriteria(Usuario.class);
+        
+        criteria.add(Restrictions.eq(NOMBRE, usuario.getNombreUsuario())); 
+        criteria.add(Restrictions.eq(PASSWORD, usuario.getPassword()));
+        
+        @SuppressWarnings("unchecked")
+		List<Usuario> socios = criteria.list();
+        session.close();
+		
+		return socios;*/
 	}
 	
 }

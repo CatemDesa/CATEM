@@ -12,8 +12,14 @@ public class LoginController {
 	{
 		try {
 			return loginDAO.autenticateUser(user);
+			
+			/*List<Usuario> usuario = loginDAO.autenticateUser(user);
+			if(usuario != null){
+				return usuario.get(0);
+			}else{
+				return null;
+			}*/
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 			throw new Exception(e);
 		}

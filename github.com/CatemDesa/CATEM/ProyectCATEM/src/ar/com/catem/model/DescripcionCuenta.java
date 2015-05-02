@@ -1,9 +1,26 @@
 package ar.com.catem.model;
 
-public class DescripcionCuenta {
+import java.io.Serializable;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="CUENTA_BANCARIA")
+public class DescripcionCuenta implements Serializable{
+
+	private static final long serialVersionUID = 8049628037264251287L;
+	
+	@Id
+	@GeneratedValue
+	@Column(name="IDCUENTABANCARIA")
 	private Integer idDescCuenta;
+	@Column(name="DESCRIPCION")
 	private String descripcion;
+	@Column(name="IDRUBRO")
 	private Integer idRubro;
 
 	public Integer getIdDescCuenta() {
