@@ -9,7 +9,7 @@
 			<h2>
 				<a href="#" id="toggle-forms" style="cursor: pointer;">Alta</a>
 			</h2>
-			<s:form action>
+			<s:form action="SocioAction">
 				<div style="margin:0px; position:static; overflow:hidden;">
 					<fieldset>
 						<legend>Alta de Socio</legend>

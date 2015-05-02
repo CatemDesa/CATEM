@@ -11,7 +11,7 @@
 				<li>
 					<a class="menuitem current">Socios</a>
 					<ul class="submenu current" >
-						<li><s:a action="login">Alta</s:a></li>
+						<li><s:a action="altaSocio">Alta</s:a></li>
 						<li><a>Baja</a></li>
 						<li><a>Modificar</a></li>
 					</ul>

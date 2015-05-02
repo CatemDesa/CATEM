@@ -16,7 +16,14 @@
             <result name="error">Login.jsp</result>
             <result name="input">Login.jsp</result> 
             
-        </action>       
+        </action>     
+        <action name="altaSocio" class="ar.com.catem.actions.SocioAction">
+            
+            <result name="success" type="tiles">/altaSocio.tiles</result>
+            <result name="error">AltaSocio.jsp</result>
+            <result name="input">AltaSocio.jsp</result> 
+            
+        </action>    
         
     </package>
 </struts>
