@@ -4,22 +4,32 @@
 <%@taglib prefix="s" uri="/struts-tags"%>
 
 
-	<s:form action="SocioAction">
+	
 		<div class="box">
 			<h2>
 				<a href="#" id="toggle-forms" style="cursor: pointer;">Alta</a>
 			</h2>
 			
 				<div style="margin:0px; position:static; overflow:hidden;">
-				<div class="block" id="forms" style="margin:0px"></div>
+				<div class="block" id="forms" style="margin:0px">
 					<fieldset>
+					<s:fielderror/>
 						<legend>Alta de Socio</legend>
-						
-						<p>
-							<s:textfield key="nombre" label="Nombre" />
-						</p>
+						<s:form action="SocioAction">
+							<div class="grid_8">
+								<div class="box">
+								<s:textfield key="nombre" label="Nombre" />
+								</div>
+							</div>
+							<div class="grid_8">
+								<div class="box">
+									<p><s:textfield key="apellido" label="Apellido" /></p>
+								</div>
+							</div>
+						</s:form>
 						</fieldset>	
 				</div>
+				</div>
 			</div>
-		</s:form>
+		
 	
