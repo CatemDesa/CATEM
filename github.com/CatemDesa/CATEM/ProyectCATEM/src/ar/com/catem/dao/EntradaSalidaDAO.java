@@ -45,11 +45,11 @@ public interface EntradaSalidaDAO {
 	static final String TIPO_RUBRO = "TIPORUBRO";
 	
 	
-	public void insertEntrada(PagoIngresos pagoIngresos);
+	public void insertEntrada(PagoIngresos pagoIngresos) throws Exception;
 	
-	public void insertSalida(Salida salida);
+	public void insertSalida(Salida salida) throws Exception;
 	
-	public void insertCheque(Cheque cheque);
+	public void insertCheque(Cheque cheque) throws Exception;
 	
 	public List<Rubro> getRubros();
 	
