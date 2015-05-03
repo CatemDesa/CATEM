@@ -23,7 +23,7 @@
 									<div class="box">
 									<table style="witdh:100%;">
 										<tr>
-											<td>
+											<td colspan="4">
 												<p>
 												<s:label>Nombre: </s:label> 
 												<s:textfield key="nombre" label="Nombre" />
@@ -37,13 +37,13 @@
 												<s:textfield key="nacionalidad" label="Nacionalidad" />
 												</p>
 											</td>
+										
 											<td>
 												<fieldset>
 													<legend>Tipo de Socio</legend>
-														<p>
-															<s:radio label="Tipo de Socio" name="tipoDeSocio" list="tipoSocio" value="getDefaultTipoValue" />
-														</p>
-													
+														<s:iterator value="tipoSocio">
+														<s:radio theme="simple" name="tipoDeSocio" list="top" value="getDefaultTipoValue"/><br>	
+														</s:iterator>
 												</fieldset>	
 											</td>								
 										</tr>
@@ -54,8 +54,6 @@
 											<s:textfield key="dni" label="DNI" />
 											</p>
 										</td>
-										</tr>
-										<tr>
 										<td colspan="2">
 											<p>
 											<s:label>Fecha de Nacimiento: </s:label>
@@ -70,8 +68,7 @@
 											<s:textfield key="estadoCivil" label="Estado Civil" />
 											</p>
 										</td>
-										</tr>
-										<tr>
+
 										<td colspan="2">
 											<p>
 											<s:label>Ocupación: </s:label>
@@ -86,8 +83,6 @@
 											<s:textfield key="celular" label="Celular" />
 											</p>
 										</td>
-										</tr>
-										<tr>
 										<td colspan="2">
 											<p>
 											<s:label>Mail: </s:label>
