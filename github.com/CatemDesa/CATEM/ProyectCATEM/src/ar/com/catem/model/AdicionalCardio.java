@@ -27,7 +27,7 @@ public class AdicionalCardio implements Serializable{
 	@Column(name="DNI")
 	private String dni;
 	@Column(name="IDDOMICILIO")
-	private Integer domicilios;
+	private Integer idDomicilio;
 
 	public Integer getIdAdic() {
 		return idAdic;
@@ -69,12 +69,12 @@ public class AdicionalCardio implements Serializable{
 		this.dni = dni;
 	}
 
-	public Integer getDomicilios() {
-		return domicilios;
+	public Integer getIdDomicilio() {
+		return idDomicilio;
 	}
 
-	public void setDomicilios(Integer domicilios) {
-		this.domicilios = domicilios;
+	public void setIdDomicilio(Integer domicilios) {
+		this.idDomicilio = domicilios;
 	}
 
 }

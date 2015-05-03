@@ -8,19 +8,19 @@ public interface SocioDAO {
 	static final String FN_INSERT_SOCIO = ".FN_INSERT_SOCIO";
 	
 	
-	static final String ID_SOCIO = "IDSOCIO";
-	static final String IDTIPOSOCIO = "IDTIPOSOCIO";
-	static final String NUMERO_SOCIO = "NUMERO_SOCIO";
-	static final String NOMBRE = "NOMBRE";
-	static final String APELLIDO = "APELLIDO";
-	static final String CELL = "CELL";
-	static final String NACIONALIDAD = "NACIONALIDAD";
-	static final String FECHA_NAC = "FECHA_NAC";
-	static final String DNI = "DNI";
-	static final String OCUPACION = "OCUPACION";
-	static final String MAIL = "MAIL";
-	static final String AFAVOR = "AFAVOR";
-	static final String IDESTADOCIVIL = "IDESTADOCIVIL";
+	static final String ID_SOCIO = "idSocio";
+	static final String IDTIPOSOCIO = "idTipoSocio";
+	static final String NUMERO_SOCIO = "nroSocio";
+	static final String NOMBRE = "nombre";
+	static final String APELLIDO = "apellido";
+	static final String CELL = "cel";
+	static final String NACIONALIDAD = "nacionalidad";
+	static final String FECHA_NAC = "fechaNacimiento";
+	static final String DNI = "dni";
+	static final String OCUPACION = "ocupacion";
+	static final String MAIL = "email";
+	static final String AFAVOR = "aFavor";
+	static final String IDESTADOCIVIL = "idEstadoCivil";
 	
 	
 	public Integer insertSocio(Socio socio) throws Exception;

@@ -3,28 +3,41 @@
 <!DOCTYPE hibernate-configuration PUBLIC
         "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
         "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
-        
+
 <hibernate-configuration>
-    <session-factory>
-        <property name="connection.driver_class">
-            oracle.jdbc.OracleDriver
-        </property>
-        <property name="connection.url">
-            jdbc:oracle:thin:@localhost:1521/xe
-        </property>
-        <property name="connection.username">BDCATEM</property>
-        <property name="connection.password">CATEMPASS</property>
-        <property name="connection.pool_size">1</property>
-        <property name="dialect">
-            org.hibernate.dialect.OracleDialect
-        </property>
-        <property name="current_session_context_class">thread</property>
-        <property name="cache.provider_class">
-            org.hibernate.cache.NoCacheProvider
-        </property>
-        <property name="show_sql">true</property>
-        <property name="hbm2ddl.auto">update</property>
- 
-        <mapping class="ar.com.catem.model.Socio"></mapping>
-    </session-factory>
+	<session-factory>
+		<property name="connection.driver_class">
+			oracle.jdbc.OracleDriver
+		</property>
+		<property name="connection.url">
+			jdbc:oracle:thin:@localhost:1521/xe
+		</property>
+		<property name="connection.username">BDCATEM</property>
+		<property name="connection.password">CATEMPASS</property>
+		<property name="connection.pool_size">1</property>
+		<property name="dialect">
+			org.hibernate.dialect.OracleDialect
+		</property>
+		<property name="current_session_context_class">thread</property>
+		<property name="cache.provider_class">
+			org.hibernate.cache.NoCacheProvider
+		</property>
+		<property name="show_sql">true</property>
+		<property name="hbm2ddl.auto">update</property>
+
+		<mapping class="ar.com.catem.model.AdicionalCardio"></mapping>
+		<mapping class="ar.com.catem.model.CardioNoSocio"></mapping>
+		<mapping class="ar.com.catem.model.CardioSocio"></mapping>
+		<mapping class="ar.com.catem.model.Cheque"></mapping>
+		<mapping class="ar.com.catem.model.DescripcionCuenta"></mapping>
+		<mapping class="ar.com.catem.model.Domicilio"></mapping>
+		<mapping class="ar.com.catem.model.PagoCheque"></mapping>
+		<mapping class="ar.com.catem.model.PagoIngresos"></mapping>
+		<mapping class="ar.com.catem.model.Rubro"></mapping>
+		<mapping class="ar.com.catem.model.Salida"></mapping>
+		<mapping class="ar.com.catem.model.Socio"></mapping>
+		<mapping class="ar.com.catem.model.TipoSocio"></mapping>
+		<mapping class="ar.com.catem.model.Usuario"></mapping>
+
+	</session-factory>
 </hibernate-configuration>
