@@ -1,13 +1,27 @@
 package ar.com.catem.actions;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.opensymphony.xwork2.ActionSupport;
 
 public class SocioAction extends ActionSupport {
 
 	private static final long serialVersionUID = 106086586587130947L;
-
+	
+	private List<String> tipoSocio;
+	
+	private String tipoDeSocio;
+	
+	private static final String PARTICULAR = "Particular";
+	private static final String COMERCIAL = "Comercial";
+	private static final String PROFESIONAL = "Profesional";
+	
+	
 	@Override
 	public String execute() throws Exception {
+		
+		
 		
 		/* TEST ALTA DE SOCIO*/
 		/*
@@ -33,5 +47,40 @@ public class SocioAction extends ActionSupport {
 		
 		return SUCCESS;
 	}
+	
+	
+	//Constructor que carga el radiobutton
+	public SocioAction(){
+		 
+		tipoSocio = new ArrayList<String>();
+		tipoSocio.add(PARTICULAR);
+		tipoSocio.add(COMERCIAL);
+		tipoSocio.add(PROFESIONAL);
+		}
+	
+	//return por default tipo de socio particular
+		public String getDefaultTipoValue(){
+			return PARTICULAR;
+		}
+
+
+		public List<String> getTipoSocio() {
+			return tipoSocio;
+		}
+
+
+		public void setTipoSocio(List<String> tipoSocio) {
+			this.tipoSocio = tipoSocio;
+		}
+
+
+		public String getTipoDeSocio() {
+			return tipoDeSocio;
+		}
+
+
+		public void setTipoDeSocio(String tipoDeSocio) {
+			this.tipoDeSocio = tipoDeSocio;
+		}
 	
 }

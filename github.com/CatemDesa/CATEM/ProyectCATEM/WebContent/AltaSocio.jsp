@@ -40,9 +40,10 @@
 											<td>
 												<fieldset>
 													<legend>Tipo de Socio</legend>
-													<p>Particular</p>
-													<p>Comercio</p>
-													<p>Profecional</p>	
+														<p>
+															<s:radio label="Tipo de Socio" name="tipoDeSocio" list="tipoSocio" value="getDefaultTipoValue" />
+														</p>
+													
 												</fieldset>	
 											</td>								
 										</tr>
