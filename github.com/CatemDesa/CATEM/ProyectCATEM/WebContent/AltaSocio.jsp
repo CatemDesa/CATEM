@@ -19,7 +19,7 @@
 						<div id="grid" style="margin:0px;">
 							
 							<s:form action="SocioAction" theme="simple">
-								<div class="grid_8" style="witdh:95%;">
+								<div class="grid_8" style="width:95%;">
 									<div class="box">
 									<table style="witdh:100%;">
 										<tr>
@@ -38,36 +38,63 @@
 												</p>
 											</td>
 											<td>
-											<fieldset>
-												<legend>Tipo de Socio</legend>
-												<p>Particular</p>
-												<p>Comercio</p>
-												<p>Profecional</p>										
-									</table>
+												<fieldset>
+													<legend>Tipo de Socio</legend>
+													<p>Particular</p>
+													<p>Comercio</p>
+													<p>Profecional</p>	
+												</fieldset>	
+											</td>								
+										</tr>
+										<tr>
+										<td colspan="2">
 											<p>
 											<s:label>DNI: </s:label>
 											<s:textfield key="dni" label="DNI" />
 											</p>
+										</td>
+										</tr>
+										<tr>
+										<td colspan="2">
 											<p>
 											<s:label>Fecha de Nacimiento: </s:label>
 											<s:textfield key="fechaNacimiento" label="Fecha de Nacimiento" />
 											</p>
+										</td>
+										</tr>
+										<tr>
+										<td colspan="2">
 											<p>
 											<s:label>Estado Civil: </s:label>
 											<s:textfield key="estadoCivil" label="Estado Civil" />
 											</p>
+										</td>
+										</tr>
+										<tr>
+										<td colspan="2">
 											<p>
 											<s:label>Ocupación: </s:label>
 											<s:textfield key="ocupacion" label="Ocupación" />
 											</p>
+										</td>
+										</tr>
+										<tr>
+										<td colspan="2">
 											<p>
 											<s:label>Celular: </s:label>
 											<s:textfield key="celular" label="Celular" />
 											</p>
+										</td>
+										</tr>
+										<tr>
+										<td colspan="2">
 											<p>
 											<s:label>Mail: </s:label>
 											<s:textfield key="mail" label="mail" />
 											</p>
+										</td>
+										</tr>
+										</table>
 									
 									</div>
 								</div>
