@@ -13,20 +13,59 @@
 				<div style="margin:0px; position:static; overflow:hidden;">
 				<div class="block" id="forms" style="margin:0px">
 					<fieldset>
-					<s:fielderror/>
+					
 						<legend>Alta de Socio</legend>
-						<s:form action="SocioAction">
-							<div class="grid_8">
-								<div class="box">
-								<s:textfield key="nombre" label="Nombre" />
+						
+						
+					<div style="margin:0px; position:static; overflow:hidden; height:100%;">
+						<div id="grid" style="margin:0px;">
+							
+							<s:form action="SocioAction" theme="simple">
+								<div class="grid_8">
+									<div class="box">
+									<p>
+									<s:label>Nombre: </s:label> 
+									<s:textfield key="nombre" label="Nombre" />
+									</p>
+									<p>
+									<s:label>Apellido: </s:label>
+									<s:textfield key="apellido" label="Apellido" />
+									</p>
+									<p>
+									<s:label>Nacionalidad: </s:label>
+									<s:textfield key="nacionalidad" label="Nacionalidad" />
+									</p>
+									<p>
+									<s:label>DNI: </s:label>
+									<s:textfield key="dni" label="DNI" />
+									</p>
+									<p>
+									<s:label>Fecha de Nacimiento: </s:label>
+									<s:textfield key="fechaNacimiento" label="Fecha de Nacimiento" />
+									</p>
+									<p>
+									<s:label>Estado Civil: </s:label>
+									<s:textfield key="estadoCivil" label="Estado Civil" />
+									</p>
+									<p>
+									<s:label>Ocupación: </s:label>
+									<s:textfield key="ocupacion" label="Ocupación" />
+									</p>
+									<p>
+									<s:label>Celular: </s:label>
+									<s:textfield key="celular" label="Celular" />
+									</p>
+									<p>
+									<s:label>Mail: </s:label>
+									<s:textfield key="mail" label="mail" />
+									</p>
+									</div>
 								</div>
-							</div>
-							<div class="grid_8">
-								<div class="box">
-									<p><s:textfield key="apellido" label="Apellido" /></p>
-								</div>
-							</div>
-						</s:form>
+							</s:form>
+							
+						</div>
+					</div>
+						
 						</fieldset>	
 				</div>
 				</div>
