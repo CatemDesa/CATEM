@@ -62,7 +62,7 @@
 												<p>
 													<s:label>Fecha de Nacimiento: </s:label>
 													<s:textfield name="socio.fechaNacimiento"
-														label="Fecha de Nacimiento" />
+														label="Fecha de Nacimiento"/>
 												</p>
 											</td>
 										</tr>
@@ -70,8 +70,9 @@
 											<td colspan="2">
 												<p>
 													<s:label>Estado Civil: </s:label>
-													<s:textfield name="socio.idEstadoCivil"
-														label="Estado Civil" />
+													<s:combobox label="Estado Civil" name="estadoCivil"
+														    headerValue="--- Selecione un estado ---"
+														  headerKey="1" list="estadoCivil" />
 												</p>
 											</td>
 
