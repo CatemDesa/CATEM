@@ -60,7 +60,7 @@
 												<p>
 													<s:label>Fecha de Nacimiento: </s:label>
 													<s:textfield name="socio.fechaNacimiento"
-														label="Fecha de Nacimiento" />
+														label="Fecha de Nacimiento"/>
 												</p>
 											</td>
 										</tr>

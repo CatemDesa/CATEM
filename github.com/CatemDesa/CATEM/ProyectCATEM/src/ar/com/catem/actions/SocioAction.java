@@ -27,7 +27,6 @@ public class SocioAction extends ActionSupport {
 
 		estados = socioController.getEstados();
 		tiposSocio = socioController.getTipoSocio();
-
 		return SUCCESS;
 	}
 
@@ -37,6 +36,7 @@ public class SocioAction extends ActionSupport {
 	 * @return
 	 */
 	public String confirmNewSocio() {
+		
 		socioController = new SocioController();
 		socio.setIdTipoSocio(tipoSocioSelected.getIdTipoSocio());
 		socio.setFechaAlta(new Date());
