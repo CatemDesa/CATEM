@@ -7,7 +7,9 @@ import org.hibernate.Session;
 import org.hibernate.criterion.Restrictions;
 
 import ar.com.catem.dao.SocioDAO;
+import ar.com.catem.model.EstadoCivil;
 import ar.com.catem.model.Socio;
+import ar.com.catem.model.TipoSocio;
 import ar.com.catem.util.HibernateUtil;
 
 public class SocioDAOImpl extends HibernateUtil implements SocioDAO {
@@ -48,6 +50,25 @@ public class SocioDAOImpl extends HibernateUtil implements SocioDAO {
         session.close();
 		
 		return socios.get(0);
+	}
+
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<EstadoCivil> getEstados() {
+		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+		session.beginTransaction();
+		Criteria criteria = session.createCriteria(EstadoCivil.class);
+		return (List<EstadoCivil>)criteria.list();
+	}
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<TipoSocio> getTiposSocio() {
+		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+		session.beginTransaction();
+		Criteria criteria = session.createCriteria(TipoSocio.class);
+		return (List<TipoSocio>)criteria.list();
 	}
 
 }

@@ -38,6 +38,7 @@
 		<mapping class="ar.com.catem.model.Socio"></mapping>
 		<mapping class="ar.com.catem.model.TipoSocio"></mapping>
 		<mapping class="ar.com.catem.model.Usuario"></mapping>
+		<mapping class="ar.com.catem.model.EstadoCivil"></mapping>		
 
 	</session-factory>
 </hibernate-configuration>

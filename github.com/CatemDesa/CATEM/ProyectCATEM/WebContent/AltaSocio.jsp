@@ -41,13 +41,11 @@
 											</td>
 
 											<td>
-												<fieldset>
-													<legend>Tipo de Socio</legend>
-													<s:iterator value="tipoSocio">
-														<s:radio theme="simple" name="tipoDeSocio" list="top"
-															value="getDefaultTipoValue" />
-														<br>
-													</s:iterator>
+												<fieldset style="white-space:nowrap;">
+													<legend>Tipo de Socio</legend>														
+														<s:iterator value="tiposSocio"> 
+														  <s:radio theme="simple" name="tipoSocioSelected" list="#{idTipoSocio:descripcion}" /><br>
+														</s:iterator> 
 												</fieldset>
 											</td>
 										</tr>
@@ -70,8 +68,7 @@
 											<td colspan="2">
 												<p>
 													<s:label>Estado Civil: </s:label>
-													<s:textfield name="socio.idEstadoCivil"
-														label="Estado Civil" />
+													<s:select list="estados" name="estadoCivilSelected" listKey="idEstadoCivil" listValue="descripcion" headerKey="-1" headerValue="Seleccionar..." ></s:select>
 												</p>
 											</td>
 

@@ -1,11 +1,12 @@
 package ar.com.catem.actions;
 
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 import ar.com.catem.controller.SocioController;
+import ar.com.catem.model.EstadoCivil;
 import ar.com.catem.model.Socio;
+import ar.com.catem.model.TipoSocio;
 
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -13,77 +14,83 @@ public class SocioAction extends ActionSupport {
 
 	private static final long serialVersionUID = 106086586587130947L;
 
-	private List<String> tipoSocio;
-
-	private String tipoDeSocio;
-	
+	private TipoSocio tipoSocioSelected;
+	private EstadoCivil estadoCivilSelected;
 	private Socio socio;
-	
-	private SocioController socioController;
+	private SocioController socioController = new SocioController();
 
-	private static final String PARTICULAR = "Particular";
-	private static final String COMERCIAL = "Comercial";
-	private static final String PROFESIONAL = "Profesional";
+	List<EstadoCivil> estados;
+	List<TipoSocio> tiposSocio;
 
 	@Override
 	public String execute() throws Exception {
-		// acá llenas los combos y demas cosas necesarias, EJ.: Combo de Estado
-		// Civil, Tipo de Socio, etc.
-		fillTipoSocio();
+
+		estados = socioController.getEstados();
+		tiposSocio = socioController.getTipoSocio();
 
 		return SUCCESS;
 	}
 
-	
-	public String confirmNewSocio(){
+	/**
+	 * Genera un nuevo socio
+	 * 
+	 * @return
+	 */
+	public String confirmNewSocio() {
 		socioController = new SocioController();
-		if(PARTICULAR.equals(tipoDeSocio)){
-			socio.setIdTipoSocio(1);
-		}
+		socio.setIdTipoSocio(tipoSocioSelected.getIdTipoSocio());
 		socio.setFechaAlta(new Date());
-		socioController.createNewSocio(socio);		
-		
+		socioController.createNewSocio(socio);
+
 		return SUCCESS;
 	}
-	
-	// Constructor que carga el radiobutton
-	private void fillTipoSocio() {
 
-		tipoSocio = new ArrayList<String>();
-		tipoSocio.add(PARTICULAR);
-		tipoSocio.add(COMERCIAL);
-		tipoSocio.add(PROFESIONAL);
+	public TipoSocio getTipoSocioSelected() {
+		return tipoSocioSelected;
 	}
 
-	// return por default tipo de socio particular
-	public String getDefaultTipoValue() {
-		return PARTICULAR;
+	public void setTipoSocioSelected(TipoSocio tipoSocioSelected) {
+		this.tipoSocioSelected = tipoSocioSelected;
 	}
 
-	public List<String> getTipoSocio() {
-		return tipoSocio;
+	public EstadoCivil getEstadoCivilSelected() {
+		return estadoCivilSelected;
 	}
 
-	public void setTipoSocio(List<String> tipoSocio) {
-		this.tipoSocio = tipoSocio;
+	public void setEstadoCivilSelected(EstadoCivil estadoCivilSelected) {
+		this.estadoCivilSelected = estadoCivilSelected;
 	}
-
-	public String getTipoDeSocio() {
-		return tipoDeSocio;
-	}
-
-	public void setTipoDeSocio(String tipoDeSocio) {
-		this.tipoDeSocio = tipoDeSocio;
-	}
-
 
 	public Socio getSocio() {
 		return socio;
 	}
 
-
 	public void setSocio(Socio socio) {
 		this.socio = socio;
+	}
+
+	public SocioController getSocioController() {
+		return socioController;
+	}
+
+	public void setSocioController(SocioController socioController) {
+		this.socioController = socioController;
+	}
+
+	public List<EstadoCivil> getEstados() {
+		return estados;
+	}
+
+	public void setEstados(List<EstadoCivil> estados) {
+		this.estados = estados;
+	}
+
+	public List<TipoSocio> getTiposSocio() {
+		return tiposSocio;
+	}
+
+	public void setTiposSocio(List<TipoSocio> tiposSocio) {
+		this.tiposSocio = tiposSocio;
 	}
 
 }

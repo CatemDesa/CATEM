@@ -10,28 +10,29 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="TIPO_SOCIO")
-public class TipoSocio implements Serializable{
+public class TipoSocio implements Serializable {
 
-
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = -2860257088388598233L;
-		@Column(name="IDTIPOSOCIO")
+	
 	@GeneratedValue
 	@Id
-	private Integer  idTipoSocio;
+	@Column(name="IDTIPOSOCIO")
+	private Integer idTipoSocio;
 	@Column(name="DESCRIPCION")
 	private String descripcion;
+
 	public Integer getIdTipoSocio() {
 		return idTipoSocio;
 	}
+
 	public void setIdTipoSocio(Integer idTipoSocio) {
 		this.idTipoSocio = idTipoSocio;
 	}
+
 	public String getDescripcion() {
 		return descripcion;
 	}
+
 	public void setDescripcion(String descripcion) {
 		this.descripcion = descripcion;
 	}
