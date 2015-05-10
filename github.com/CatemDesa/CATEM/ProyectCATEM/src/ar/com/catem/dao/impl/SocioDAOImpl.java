@@ -7,7 +7,9 @@ import org.hibernate.Session;
 import org.hibernate.criterion.Restrictions;
 
 import ar.com.catem.dao.SocioDAO;
+import ar.com.catem.model.EstadoCivil;
 import ar.com.catem.model.Socio;
+import ar.com.catem.model.TipoSocio;
 import ar.com.catem.util.HibernateUtil;
 
 public class SocioDAOImpl extends HibernateUtil implements SocioDAO {
@@ -48,6 +50,16 @@ public class SocioDAOImpl extends HibernateUtil implements SocioDAO {
         session.close();
 		
 		return socios.get(0);
+	}
+
+	public List<EstadoCivil> getEstados() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public List<TipoSocio> getTiposSocio() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
