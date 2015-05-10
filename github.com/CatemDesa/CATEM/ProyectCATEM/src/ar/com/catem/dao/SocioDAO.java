@@ -1,6 +1,10 @@
 package ar.com.catem.dao;
 
+import java.util.List;
+
+import ar.com.catem.model.EstadoCivil;
 import ar.com.catem.model.Socio;
+import ar.com.catem.model.TipoSocio;
 
 public interface SocioDAO {
 
@@ -28,6 +32,10 @@ public interface SocioDAO {
 	public void deleteUpdateSocio(Socio socio);
 	
 	public Socio getSocioBy(Integer nroSocio, String apellido, String dni);
+
+	List<TipoSocio> getTiposSocio();
+
+	List<EstadoCivil> getEstados();
 	
 	
 }

@@ -39,21 +39,12 @@
 														label="Nacionalidad" />
 												</p>
 											</td>
-
 											<td>
-<<<<<<< HEAD
-												<fieldset style="white-space: nowrap;">
-													<legend>Tipo de Socio</legend>
-														<s:iterator value="tiposSocio">
-															<s:radio theme="simple" name="tipoSocioSelected" list="#{idTipoSocio:descripcion}"></s:radio>
-														</s:iterator>
-=======
 												<fieldset style="white-space:nowrap;">
 													<legend>Tipo de Socio</legend>														
 														<s:iterator value="tiposSocio"> 
 														  <s:radio theme="simple" name="tipoSocioSelected" list="#{idTipoSocio:descripcion}" /><br>
 														</s:iterator> 
->>>>>>> origin/master
 												</fieldset>
 											</td>
 										</tr>
@@ -75,12 +66,8 @@
 										<tr>
 											<td colspan="2">
 												<p>
-<<<<<<< HEAD
-													<s:select list="estados" name="estadoCivilSelected" listKey="idEstadoCivil" listValue="descripcion" headerKey="-1" headerValue="Seleccionar..."></s:select>
-=======
 													<s:label>Estado Civil: </s:label>
 													<s:select list="estados" name="estadoCivilSelected" listKey="idEstadoCivil" listValue="descripcion" headerKey="-1" headerValue="Seleccionar..." ></s:select>
->>>>>>> origin/master
 												</p>
 											
 											</td>
