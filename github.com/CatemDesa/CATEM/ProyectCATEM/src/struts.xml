@@ -2,9 +2,9 @@
  
 <struts>
     <constant name="struts.devMode" value="true" />    
-   <constant name="struts.convention.result.path" value="/"></constant>    
+   <constant name="struts.custom.i18n.resources" value="ApplicationResources" /> 
  
-    <package name="defalut" extends="struts-default">
+    <package name="default" extends="struts-default">
          <result-types>
 			<result-type name="tiles"
 				class="org.apache.struts2.views.tiles.TilesResult" />
@@ -16,14 +16,14 @@
             <result name="input">Login.jsp</result>            
         </action>
         
-        <action name="altaSocio" class="ar.com.catem.actions.SocioAction">            
-            <result name="success" type="tiles">/altaSocio.tiles</result>
+        <action name="confimAltaSocio" class="ar.com.catem.actions.SocioAction" method="execute">            
+            <result name="success" type="tiles">/welcome.tiles</result>
             <result name="error">AltaSocio.jsp</result>
             <result name="input">AltaSocio.jsp</result>        
         </action>
         
-        <action name="confimAltaSocio" class="ar.com.catem.actions.SocioAction" method="confirmNewSocio">            
-            <result name="success" type="tiles">/welcome.tiles</result>
+        <action name="altaSocio" class="ar.com.catem.actions.SocioAction" method="init">            
+            <result name="success" type="tiles">/altaSocio.tiles</result>
             <result name="error">AltaSocio.jsp</result>
             <result name="input">AltaSocio.jsp</result>        
         </action>
