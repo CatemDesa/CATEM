@@ -7,6 +7,10 @@ import ar.com.catem.model.Socio;
 import ar.com.catem.model.TipoSocio;
 
 public interface SocioDAO {
+
+	static final String PACKAGE = "CATEM_SOCIO_PACKAGE";
+	static final String FN_INSERT_SOCIO = ".FN_INSERT_SOCIO";
+	
 	
 	static final String ID_SOCIO = "idSocio";
 	static final String IDTIPOSOCIO = "idTipoSocio";
@@ -28,8 +32,10 @@ public interface SocioDAO {
 	public void deleteUpdateSocio(Socio socio);
 	
 	public Socio getSocioBy(Integer nroSocio, String apellido, String dni);
+
+	List<TipoSocio> getTiposSocio();
+
+	List<EstadoCivil> getEstados();
 	
-	public List<EstadoCivil> getEstados();
 	
-	public List<TipoSocio> getTiposSocio();
 }

@@ -53,9 +53,12 @@ public class SocioDAOImpl extends HibernateUtil implements SocioDAO {
 	}
 
 
+
+
+
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<EstadoCivil> getEstados() {
+	public List <EstadoCivil> getEstados() {
 		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
 		session.beginTransaction();
 		Criteria criteria = session.createCriteria(EstadoCivil.class);
@@ -64,11 +67,12 @@ public class SocioDAOImpl extends HibernateUtil implements SocioDAO {
 
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<TipoSocio> getTiposSocio() {
+	public List <TipoSocio> getTiposSocio() {
 		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
 		session.beginTransaction();
 		Criteria criteria = session.createCriteria(TipoSocio.class);
 		return (List<TipoSocio>)criteria.list();
+
 	}
 
 }
