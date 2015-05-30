@@ -17,6 +17,7 @@ public class SocioController {
 		socioDao = new SocioDAOImpl();
 		
 		try {
+			
 			Integer idSocio = socioDao.insertSocio(socio);
 			
 		} catch (Exception e) {
