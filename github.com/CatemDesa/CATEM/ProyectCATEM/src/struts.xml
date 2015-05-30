@@ -1,32 +1,31 @@
 <!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" "http://struts.apache.org/dtds/struts-2.0.dtd">
- 
+
 <struts>
-    <constant name="struts.devMode" value="true" />    
-   <constant name="struts.custom.i18n.resources" value="ApplicationResources" /> 
- 
-    <package name="default" extends="struts-default">
-         <result-types>
+	<constant name="struts.devMode" value="true" />
+	<constant name="struts.custom.i18n.resources" value="ApplicationResources" />
+
+	<package name="default" extends="struts-default">
+		<result-types>
 			<result-type name="tiles"
 				class="org.apache.struts2.views.tiles.TilesResult" />
 		</result-types>
-		
-        <action name="login" class="ar.com.catem.actions.LoginAction">            
-            <result name="success" type="tiles">/welcome.tiles</result>
-            <result name="error">Login.jsp</result>
-            <result name="input">Login.jsp</result>            
-        </action>
-        
-        <action name="confimAltaSocio" class="ar.com.catem.actions.SocioAction" method="execute">            
-            <result name="success" type="tiles">/welcome.tiles</result>
-            <result name="error">AltaSocio.jsp</result>
-            <result name="input">AltaSocio.jsp</result>        
-        </action>
-        
-        <action name="altaSocio" class="ar.com.catem.actions.SocioAction" method="init">            
-            <result name="success" type="tiles">/altaSocio.tiles</result>
-            <result name="error">AltaSocio.jsp</result>
-            <result name="input">AltaSocio.jsp</result>        
-        </action>
-        
-    </package>
+
+		<action name="login" class="ar.com.catem.actions.LoginAction">
+			<result name="success" type="tiles">/welcome.tiles</result>
+			<result name="error">Login.jsp</result>
+			<result name="input">Login.jsp</result>
+		</action>
+
+		<action name="confimAltaSocio" class="ar.com.catem.actions.SocioAction">
+			<result name="success" type="tiles">/welcome.tiles</result>
+			<result name="error">AltaSocio.jsp</result>
+			<result name="input">AltaSocio.jsp</result>
+		</action>
+
+		<action name="altaSocio" class="ar.com.catem.actions.SocioAction" method="init">
+			<result name="success" type="tiles">/altaSocio.tiles</result>
+			<result name="input" type="tiles">/altaSocio.tiles</result>
+		</action>
+
+	</package>
 </struts>

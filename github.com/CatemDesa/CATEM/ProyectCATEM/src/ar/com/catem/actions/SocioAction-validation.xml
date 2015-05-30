@@ -1,7 +1,7 @@
 <!DOCTYPE validators PUBLIC "-//Apache Struts//XWork Validator 1.0.3//EN" "http://struts.apache.org/dtds/xwork-validator-1.0.3.dtd">
 
 <validators>	
- 	<field name="socio.idTipoSocio">
+ 	<!-- <field name="idTipoSocio">
 		<field-validator type="required">
 			<message>${getText("tipoSocio")} ${getText("errors.required")}
 			</message>
@@ -13,9 +13,9 @@
 			<message>${getText("estadoCivil")} ${getText("errors.required")}
 			</message>
 		</field-validator>
-	</field>
+	</field> -->
 
-	<field name="socio.apellido">
+	<field name="apellido">
 		<field-validator type="requiredstring">
 			<param name="trim">true</param>
 			<message>${getText("apellido")} ${getText("errors.required")}
@@ -23,14 +23,14 @@
 		</field-validator>
 	</field>
 
-	<field name="socio.nombre">
+	<field name="nombre">
 		<field-validator type="requiredstring">
 			<param name="trim">true</param>
 			<message>${getText("nombre")} ${getText("errors.required")}</message>
 		</field-validator>
 	</field>
 
-	<field name="socio.nacionalidad">
+	<field name="nacionalidad">
 		<field-validator type="requiredstring">
 			<param name="trim">true</param>
 			<message>${getText("nacionalidad")} ${getText("errors.required")}
@@ -38,47 +38,47 @@
 		</field-validator>
 	</field>
 
-	<field name="socio.ocupacion">
+	<field name="ocupacion">
 		<field-validator type="requiredstring">
 			<message>${getText("ocupacion")} ${getText("errors.required")}
 			</message>
 		</field-validator>
 	</field>
 
-	<field name="socio.cel">
+	<!-- <field name="cel">
 		<field-validator type="regex">
 			<param name="expression">\([\d][\d][\d]\) [\d][\d][\d][\d]-[\d][\d][\d][\d]</param>
 			<message>${getText("celular")} ${getText("errors.invalid")}</message>
 		</field-validator>
-	</field>
+	</field> -->
 
-	<field name="socio.email">
-		<field-validator type="required">
+	<field name="email">
+		<field-validator type="requiredstring">
 			<message>${getText("email")} ${getText("errors.required")}</message>
 		</field-validator>
-		<field-validator type="mail">
+		<!-- <field-validator type="mail">
 			<message>${getText("email")} ${getText("errors.format.email")}
 			</message>
-		</field-validator>
+		</field-validator> -->
 	</field>
 
-	<field name="socio.dni">
+	<field name="dni">
 		<field-validator type="required">
 			<message>${getText("dni")} ${getText("errors.required")}</message>
 		</field-validator>
-		<field-validator type="int">
+		<!-- <field-validator type="int">
 			<message>${getText("dni")} ${getText("errors.invalid")}</message>
-		</field-validator>
+		</field-validator> -->
 	</field>
 
-	<field name="socio.fechaNacimiento">
+	<field name="fechaNacimiento">
 		<field-validator type="required">
 			<message>${getText("fechaNac")} ${getText("errors.required")}
 			</message>
 		</field-validator>
-		<field-validator type="date">
+		<!-- <field-validator type="date">
 			<message>${getText("fechaNac")} ${getText("errors.format.date")}
 			</message>
-		</field-validator>
+		</field-validator> -->
 	</field>
 </validators>
