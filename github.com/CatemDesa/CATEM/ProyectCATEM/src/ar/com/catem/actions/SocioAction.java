@@ -32,7 +32,7 @@ public class SocioAction extends ActionSupport {
 	private String nacionalidad;
 	private Integer idEstadoCivil;
 	private Date fechaNacimiento;
-	private String dni;
+	private Integer dni;
 	private String ocupacion;
 	private String email;
 	private Date fechaAlta;
@@ -57,7 +57,7 @@ public class SocioAction extends ActionSupport {
 		socio.setIdTipoSocio(idTipoSocio);
 		socio.setApellido(apellido);
 		socio.setCel(cel);
-		socio.setDni(dni);
+		socio.setDni(dni.toString());
 		socio.setEmail(email);
 		socio.setFechaNacimiento(fechaNacimiento);
 		socio.setIdEstadoCivil(idEstadoCivil);
@@ -68,7 +68,17 @@ public class SocioAction extends ActionSupport {
 		return SUCCESS;
 	}
 
-	
+	@Override
+	public void validate() {		
+		super.validate();
+		
+		if(idEstadoCivil == null){
+			addFieldError("idEstadoCivil","El Estado Civil es requerido.");
+		}
+		if(idTipoSocio == null){
+			addFieldError("idTipoSocio","El Tipo de Socio es requerido.");
+		}
+	}
 
 	public SocioController getSocioController() {
 		return socioController;
@@ -166,11 +176,11 @@ public class SocioAction extends ActionSupport {
 		this.fechaNacimiento = fechaNacimiento;
 	}
 
-	public String getDni() {
+	public Integer getDni() {
 		return dni;
 	}
 
-	public void setDni(String dni) {
+	public void setDni(Integer dni) {
 		this.dni = dni;
 	}
 

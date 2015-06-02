@@ -39,27 +39,27 @@
 											<tr>
 												<td colspan="3">
 													<p>
-														<s:label key="nombre"></s:label>
-														<s:textfield name="nombre" key="nombre" theme="simple" />
+														<s:label key="label.nombre"></s:label>
+														<s:textfield name="nombre" key="label.nombre" theme="simple" />
 														<s:fielderror fieldName="nombre"></s:fielderror>
 													</p>
 													<p>
-														<s:label key="apellido"></s:label>
-														<s:textfield name="apellido" key="apellido" />
+														<s:label key="label.apellido"></s:label>
+														<s:textfield name="apellido" key="label.apellido" />
 														<s:fielderror fieldName="apellido"></s:fielderror>
 													</p>
 													<p>
-														<s:label key="nacionalidad"></s:label>
-														<s:textfield name="nacionalidad" key="nacionalidad" />
+														<s:label key="label.nacionalidad"></s:label>
+														<s:textfield name="nacionalidad" key="label.nacionalidad" />
 														<s:fielderror fieldName="nacionalidad"></s:fielderror>
 													</p>
 												</td>
 
 												<td>
 													<fieldset style="white-space: nowrap;">
-														<s:label key="tipoSocio"></s:label>
+														<s:label key="label.tipoSocio"></s:label>
 														<br />														
-														<s:radio name="idTipoSocio" list="tiposSocio" listKey="idTipoSocio" listValue="descripcion" value="1"/>
+														<s:radio name="idTipoSocio" list="tiposSocio" listKey="idTipoSocio" listValue="descripcion"/>
 													</fieldset>
 												</td>
 												<td><s:fielderror fieldName="idTipoSocio"></s:fielderror></td>
@@ -67,16 +67,16 @@
 											<tr>
 												<td>
 													<p>
-														<s:label key="DNI"></s:label>
-														<s:textfield name="dni" key="DNI" />
+														<s:label key="label.tipodni"></s:label>
+														<s:textfield name="dni" key="label.tipodni" />
 													</p>
 												</td>
 												<td><s:fielderror fieldName="dni"></s:fielderror></td>
 												<td>
 													<p>
-														<s:label key="fechaNac"></s:label>
-														<sj:datepicker  name="fechaNacimiento" label="fechaNac"
-															displayFormat="dd-MM-yy" />
+														<s:label key="label.fechaNac"></s:label>
+														<sj:datepicker  name="fechaNacimiento" label="label.fechaNac"
+															displayFormat="dd/mm/yy" />
 													</p>
 												</td>
 												<td><s:fielderror fieldName="fechaNacimiento"></s:fielderror></td>
@@ -84,18 +84,18 @@
 											<tr>
 												<td>
 													<p>
-														<s:label key="estadoCivil"></s:label>
+														<s:label key="label.estadoCivil"></s:label>
 														<s:select list="estados" key="idEstadoCivil" name="idEstadoCivil"
 															listKey="idEstadoCivil" listValue="descripcion"
-															headerKey="-1" headerValue="Seleccionar..."></s:select>
+															headerKey="" headerValue="Seleccionar..."></s:select>
 													</p>
 												</td>
 												<td><s:fielderror fieldName="idEstadoCivil"></s:fielderror></td>
 
 												<td>
 													<p>
-														<s:label key="ocupacion"></s:label>
-														<s:textfield name="ocupacion" key="ocupacion" />
+														<s:label key="label.ocupacion"></s:label>
+														<s:textfield name="ocupacion" key="label.ocupacion" />
 													</p>
 												</td>
 												<td><s:fielderror fieldName="ocupacion"></s:fielderror></td>
@@ -103,15 +103,15 @@
 											<tr>
 												<td>
 													<p>
-														<s:label key="celular"></s:label>
-														<s:textfield name="cel" key="cel" />
+														<s:label key="label.celular"></s:label>
+														<s:textfield name="cel" key="label.celular" maxlength="11"/>
 													</p>
 												</td>
 												<td><s:fielderror fieldName="cel"></s:fielderror></td>
 												<td>
 													<p>
-														<s:label key="email"></s:label>
-														<s:textfield name="email" key="email" />
+														<s:label key="label.email"></s:label>
+														<s:textfield name="email" key="label.email" />
 													</p>
 												</td>
 												<td><s:fielderror fieldName="email"></s:fielderror></td>

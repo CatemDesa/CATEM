@@ -27,13 +27,13 @@
 						<br />
 						<table style="width: 60%;">
 							<tr>
-								<td><s:label key="username"></s:label></td>
-								<td><s:textfield key="username" name="username" size="15" /></td>
+								<td><s:label key="label.username"></s:label></td>
+								<td><s:textfield key="label.username" name="username" size="15" /></td>
 								<td><s:fielderror fieldName="username"></s:fielderror></td>
 							</tr>
 							<tr>
-								<td><s:label key="password"></s:label></td>
-								<td><s:password key="password" name="password" size="15" /></td>
+								<td><s:label key="label.password"></s:label></td>
+								<td><s:password key="label.password" name="password" size="15" /></td>
 								<td><s:fielderror fieldName="password"></s:fielderror></td>
 							</tr>
 						</table>
