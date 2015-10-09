@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE validators PUBLIC "-//Apache Struts//XWork Validator 1.0.3//EN" "http://struts.apache.org/dtds/xwork-validator-1.0.3.dtd">
 
 <validators>	
@@ -81,4 +82,90 @@
 			</message>
 		</field-validator>
 	</field>
+=======
+<!DOCTYPE validators PUBLIC "-//Apache Struts//XWork Validator 1.0.3//EN" "http://struts.apache.org/dtds/xwork-validator-1.0.3.dtd">
+
+<validators>	
+ 	<!-- <field name="idTipoSocio">
+		<field-validator type="required">
+			<message>${getText("label.tipoSocio")} ${getText("errors.required")}
+			</message>
+		</field-validator>
+	</field>
+
+	<field name="idEstadoCivil">
+		<field-validator type="required">
+			<message>${getText("label.estadoCivil")} ${getText("errors.required")}
+			</message>
+		</field-validator>
+	</field> -->
+
+	<field name="apellido">
+		<field-validator type="requiredstring">
+			<param name="trim">true</param>
+			<message>${getText("label.apellido")} ${getText("errors.required")}
+			</message>
+		</field-validator>
+	</field>
+
+	<field name="nombre">
+		<field-validator type="requiredstring">
+			<param name="trim">true</param>
+			<message>${getText("label.nombre")} ${getText("errors.required")}</message>
+		</field-validator>
+	</field>
+
+	<field name="nacionalidad">
+		<field-validator type="requiredstring">
+			<param name="trim">true</param>
+			<message>${getText("label.nacionalidad")} ${getText("errors.required")}
+			</message>
+		</field-validator>
+	</field>
+
+	<field name="ocupacion">
+		<field-validator type="requiredstring">
+			<message>${getText("label.ocupacion")} ${getText("errors.required")}
+			</message>
+		</field-validator>
+	</field>
+
+	<field name="cel">
+		<field-validator type="int">
+			<param name="minLength">8</param>  
+             <param name="maxLength">11</param>  
+			<message>${getText("label.celular")} ${getText("errors.invalid")}</message>
+		</field-validator>
+	</field>
+
+	<field name="email">
+		<field-validator type="requiredstring">
+			<message>${getText("label.email")} ${getText("errors.required")}</message>
+		</field-validator>
+		<field-validator type="email">
+			<message>${getText("label.email")} ${getText("errors.format.email")}
+			</message>
+		</field-validator>
+	</field>
+
+	<field name="dni">
+		<field-validator type="required">
+			<message>${getText("label.tipodni")} ${getText("errors.required")}</message>
+		</field-validator>
+		<field-validator type="int">
+			<message>${getText("label.tipodni")} ${getText("errors.invalid")}</message>
+		</field-validator>
+	</field>
+
+	<field name="fechaNacimiento">
+		<field-validator type="required">
+			<message>${getText("label.fechaNac")} ${getText("errors.required")}
+			</message>
+		</field-validator>
+		<field-validator type="date">
+			<message>${getText("label.fechaNac")} ${getText("errors.format.date")}
+			</message>
+		</field-validator>
+	</field>
+>>>>>>> origin/master
 </validators>

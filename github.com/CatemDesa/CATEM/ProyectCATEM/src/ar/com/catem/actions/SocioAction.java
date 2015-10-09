@@ -1,7 +1,10 @@
 package ar.com.catem.actions;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+
+import org.apache.struts2.interceptor.validation.SkipValidation;
 
 import ar.com.catem.controller.SocioController;
 import ar.com.catem.model.EstadoCivil;
@@ -14,59 +17,67 @@ public class SocioAction extends ActionSupport {
 
 	private static final long serialVersionUID = 106086586587130947L;
 
-	private TipoSocio tipoSocioSelected;
-	private EstadoCivil estadoCivilSelected;
 	private Socio socio;
 	private SocioController socioController = new SocioController();
 
-	List<EstadoCivil> estados;
-	List<TipoSocio> tiposSocio;
+	List<EstadoCivil> estados = new ArrayList<EstadoCivil>();
+	List<TipoSocio> tiposSocio = new ArrayList<TipoSocio>();
 
-	@Override
-	public String execute() throws Exception {
+	
+	private Integer idTipoSocio;
+	private String nroSocio;
+	private String apellido;
+	private String nombre;
+	private String cel;
+	private String nacionalidad;
+	private Integer idEstadoCivil;
+	private Date fechaNacimiento;
+	private Integer dni;
+	private String ocupacion;
+	private String email;
+	private Date fechaAlta;
+	
+	public SocioAction() {
+		setEstados(socioController.getEstados());
+		setTiposSocio(socioController.getTipoSocio());
+	}
 
-		estados = socioController.getEstados();
-		tiposSocio = socioController.getTipoSocio();
+	@SkipValidation
+	public String init() {
+		setEstados(socioController.getEstados());
+		setTiposSocio(socioController.getTipoSocio());
 		return SUCCESS;
 	}
 
-	/**
-	 * Genera un nuevo socio
-	 * 
-	 * @return
-	 */
-	public String confirmNewSocio() {
-		
+	@Override
+	public String execute() throws Exception {
 		socioController = new SocioController();
-		socio.setIdTipoSocio(tipoSocioSelected.getIdTipoSocio());
+		socio = new Socio();
 		socio.setFechaAlta(new Date());
+		socio.setIdTipoSocio(idTipoSocio);
+		socio.setApellido(apellido);
+		socio.setCel(cel);
+		socio.setDni(dni.toString());
+		socio.setEmail(email);
+		socio.setFechaNacimiento(fechaNacimiento);
+		socio.setIdEstadoCivil(idEstadoCivil);
+		socio.setNacionalidad(nacionalidad);
+		socio.setOcupacion(ocupacion);
 		socioController.createNewSocio(socio);
 
 		return SUCCESS;
 	}
 
-	public TipoSocio getTipoSocioSelected() {
-		return tipoSocioSelected;
-	}
-
-	public void setTipoSocioSelected(TipoSocio tipoSocioSelected) {
-		this.tipoSocioSelected = tipoSocioSelected;
-	}
-
-	public EstadoCivil getEstadoCivilSelected() {
-		return estadoCivilSelected;
-	}
-
-	public void setEstadoCivilSelected(EstadoCivil estadoCivilSelected) {
-		this.estadoCivilSelected = estadoCivilSelected;
-	}
-
-	public Socio getSocio() {
-		return socio;
-	}
-
-	public void setSocio(Socio socio) {
-		this.socio = socio;
+	@Override
+	public void validate() {		
+		super.validate();
+		
+		if(idEstadoCivil == null){
+			addFieldError("idEstadoCivil","El Estado Civil es requerido.");
+		}
+		if(idTipoSocio == null){
+			addFieldError("idTipoSocio","El Tipo de Socio es requerido.");
+		}
 	}
 
 	public SocioController getSocioController() {
@@ -92,5 +103,111 @@ public class SocioAction extends ActionSupport {
 	public void setTiposSocio(List<TipoSocio> tiposSocio) {
 		this.tiposSocio = tiposSocio;
 	}
+
+	public Socio getSocio() {
+		return socio;
+	}
+
+	public void setSocio(Socio socio) {
+		this.socio = socio;
+	}
+
+	public Integer getIdTipoSocio() {
+		return idTipoSocio;
+	}
+
+	public void setIdTipoSocio(Integer idTipoSocio) {
+		this.idTipoSocio = idTipoSocio;
+	}
+
+	public String getNroSocio() {
+		return nroSocio;
+	}
+
+	public void setNroSocio(String nroSocio) {
+		this.nroSocio = nroSocio;
+	}
+
+	public String getApellido() {
+		return apellido;
+	}
+
+	public void setApellido(String apellido) {
+		this.apellido = apellido;
+	}
+
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	public String getCel() {
+		return cel;
+	}
+
+	public void setCel(String cel) {
+		this.cel = cel;
+	}
+
+	public String getNacionalidad() {
+		return nacionalidad;
+	}
+
+	public void setNacionalidad(String nacionalidad) {
+		this.nacionalidad = nacionalidad;
+	}
+
+	public Integer getIdEstadoCivil() {
+		return idEstadoCivil;
+	}
+
+	public void setIdEstadoCivil(Integer idEstadoCivil) {
+		this.idEstadoCivil = idEstadoCivil;
+	}
+
+	public Date getFechaNacimiento() {
+		return fechaNacimiento;
+	}
+
+	public void setFechaNacimiento(Date fechaNacimiento) {
+		this.fechaNacimiento = fechaNacimiento;
+	}
+
+	public Integer getDni() {
+		return dni;
+	}
+
+	public void setDni(Integer dni) {
+		this.dni = dni;
+	}
+
+	public String getOcupacion() {
+		return ocupacion;
+	}
+
+	public void setOcupacion(String ocupacion) {
+		this.ocupacion = ocupacion;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public Date getFechaAlta() {
+		return fechaAlta;
+	}
+
+	public void setFechaAlta(Date fechaAlta) {
+		this.fechaAlta = fechaAlta;
+	}
+
+	
 
 }
